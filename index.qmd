@@ -150,45 +150,12 @@ letras_df %>%
 ```
 
 
-```{r}
-rm(list = ls())
-```
-
-```{r}
-install.packages("ggplot2")
-install.packages("dplyr")
-
-library(ggplot2)
-library(dplyr)
-
-```
 
 
-```{r}
-Tratamiento <- rep(c("T1", "T2", "T3"), each = 4)
-Rendimiento <- c(12, 15, 14, 13, 18, 17, 16, 19, 20, 22, 21, 23)
-datos <- data.frame(Tratamiento, Rendimiento)
-```
 
 
-```{r}
-head(datos)
-
-```
 
 
-```{r}
-resumen <- datos %>%
-  group_by(Tratamiento) %>%
-  summarise(
-    media = mean(Rendimiento, na.rm = TRUE),
-    se = sd(Rendimiento, na.rm = TRUE) / sqrt(n())
-  )
-
-# Verifica que se haya creado
-print(resumen)
-
-```
 
 
 
